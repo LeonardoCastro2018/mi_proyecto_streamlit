@@ -7,14 +7,15 @@ import matplotlib.pyplot as plt
 from fpdf import FPDF
 import sys
 import os
+
+# Agregar scripts al path si es necesario
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "scripts")))
-
-import streamlit as st
-from pages import page1, page2  # Importamos las páginas
-
 
 # Mensaje de depuración para verificar que el script se ejecuta correctamente
 st.write("✅ Script de Streamlit ejecutándose correctamente...")
+
+# Importar las páginas
+from pages import page1, page2  # Asegúrate de que la carpeta `pages` tenga un __init__.py
 
 # Inicializar el estado de la sesión si no existe
 if "authenticated" not in st.session_state:
@@ -25,6 +26,7 @@ if "selected_page" not in st.session_state:
 # Función para verificar credenciales
 def check_login(username, password):
     return username == "admin" and password == "admin"
+
 
 # Función para manejar el login
 def login():
