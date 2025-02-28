@@ -1,10 +1,20 @@
+import streamlit as st
+import pandas as pd
+import requests
+import sqlite3
+import plotly.express as px
+import matplotlib.pyplot as plt
+from fpdf import FPDF
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "scripts")))
 
-
 import streamlit as st
 from pages import page1, page2  # Importamos las páginas
+
+
+# Mensaje de depuración para verificar que el script se ejecuta correctamente
+st.write("✅ Script de Streamlit ejecutándose correctamente...")
 
 # Inicializar el estado de la sesión si no existe
 if "authenticated" not in st.session_state:
