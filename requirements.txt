@@ -4,4 +4,3 @@ requests
 matplotlib
 plotly
 fpdf
-sqlite3
